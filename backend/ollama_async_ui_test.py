@@ -117,6 +117,11 @@ async def process_dataframe(df, filename):
     df[["proposed_solution", "similarity_percent"]] = df["result"].apply(regex_text)
     # df["similarity_percent"] = similarity_percentage_list
     df["is_template_structure"] = df["similarity_percent"].apply(is_template_structure)
+    df["rulebook_template"] = "Follow the below template: \n Pre-condition: " " \nAcceptance Criteria: \n 'Input': " " \n 'Output': " ""
+
+    df = df.drop(["result", "similarity_percent"], axis=1)
+    column_titles = ["ID", "DA_Verification_Criteria", "DA_Test_Platform", "DA_Object_Type", "DA_Status_RA6", "RA6_Team", "DA_Feature_Name", "is_template_structure", "proposed_solution", "rulebook_template"]
+    df = df.reindex(columns=column_titles)
     return df
 
 
