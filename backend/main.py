@@ -43,8 +43,8 @@ async def upload_file(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     try:
-        df = pd.read_excel(file_location, nrows=5)  # Read only 5 rows for testing
-        batch_size = 2  # Process 2 rows at a time
+        df = pd.read_excel(file_location) 
+        batch_size = 10  # Process 2 rows at a time
         total_batches = (len(df) // batch_size) + (1 if len(df) % batch_size else 0)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
