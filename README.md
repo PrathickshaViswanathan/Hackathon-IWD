@@ -12,9 +12,10 @@ npm run dev
 ```
 
 ## Backend -Python
-```sh
-ollama download  -->https://ollama.com/download     
-ollama.exe -> be installed in windows       
+
+ollama download  -->  https://ollama.com/download    
+```sh 
+ollama.exe  -> to be installed in windows       
 ollama serve        
 ollama run quen2.5
 
