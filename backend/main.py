@@ -11,6 +11,7 @@ import json  # For structured streaming responses
 from ollama_async_ui_test import process_dataframe, plot_image
 import time
 
+
 app = FastAPI()
 
 # Configure CORS (Restrict in Production)
