@@ -44,7 +44,7 @@ async def upload_file(file: UploadFile = File(...)):
 
     try:
         df = pd.read_excel(file_location) 
-        batch_size = 10  # Process 2 rows at a time
+        batch_size = 10  # Process 10 rows at a time
         total_batches = (len(df) // batch_size) + (1 if len(df) % batch_size else 0)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
