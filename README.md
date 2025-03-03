@@ -14,6 +14,7 @@ npm run dev
 ## Backend -Python
 
 ollama download  -->  https://ollama.com/download    
+Make sure that any proxy should be running in background
 ```sh 
 ollama.exe  -> to be installed in windows       
 ollama serve        
